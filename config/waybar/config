@@ -1,0 +1,44 @@
+[
+  {
+    "output": "DP-1",
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/power", "custom/games"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+
+    "custom/launcher": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "format": "{name}",
+      "disable-scroll": false
+    },
+
+    	
+    "clock": {
+      "format": "{:%a %d %b  %H:%M}",
+      "tooltip": true,
+      "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
+    },
+
+    "pulseaudio": { "format": " {volume}%", "on-click": "pavucontrol" },
+    "network": { "format-wifi": "  {essid}", "format-ethernet": "  {ifname}", "format-disconnected": "" },
+    "cpu": { "format": " {usage}%" },
+    "memory": { "format": " {used:0.1f}G" },
+    "tray": { "icon-size": 16, "spacing": 8 },
+    "custom/power": { "format": "⏻", "tooltip": false, "on-click": "~/.local/bin/power-menu"},
+    "custom/games": { "format": "🎮", "on-click": "~/.local/bin/game-menu" }
+
+  }
+]
+

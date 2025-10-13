@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+choice="$(printf "Discord Wayland\nAscension WoW\nProject Epoch\nTurtle-WoW\nMinecraft\nSteam" | rofi -dmenu -i -p 'Games')"
+
+case "$choice" in
+"Discord Wayland")
+  setsid -f /usr/local/bin/discord-wayland >/dev/null 2>&1
+  ;;
+"Ascension WoW")
+  setsid -f /usr/local/bin/ascension.sh >/tmp/ascension.log 2>&1
+  ;;
+"Project Epoch")
+  setsid -f /usr/local/bin/epoch.sh >/tmp/epoch.log 2>&1
+  ;;
+"Turtle-WoW")
+  setsid -f /usr/local/bin/turtlewow.sh >/tmp/turtle.log 2>&1
+  ;;
+"Minecraft")
+  setsid -f /usr/bin/prismlauncher >/tmp/prism.log 2>&1
+  ;;
+"Steam")
+  setsid -f /usr/bin/steam >/tmp/steam.log 2>&1
+  ;;
+*) exit 0 ;;
+esac

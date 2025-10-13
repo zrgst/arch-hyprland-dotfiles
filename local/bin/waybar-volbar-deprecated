@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+SINK='@DEFAULT_AUDIO_SINK@'
+line="$(wpctl get-volume "$SINK")"
+vol=$(printf '%s' "$line" | awk 'match($0, /[0-9.]+/, a){printf("%d", a[0]*100+0.5)}')
+mute=$(printf '%s' "$line" | grep -q MUTED && echo 1 || echo 0)
+
+# Bygg en 20-trinns bar
+steps=20
+filled=$(( vol*steps/100 ))
+bar="$(printf '%0.s█' $(seq 1 $filled))$(printf '%0.s░' $(seq 1 $((steps-filled))))"
+
+icon=""
+[ "$vol" -ge 34 ] && icon=""
+[ "$vol" -ge 67 ] && icon=""
+[ "$mute" -eq 1 ] && icon=""
+
+# Waybar custom-modul JSON
+printf '{"text":"%s  %s %d%%","class":"%s","tooltip":"Volume: %d%%"}\n' \
+  "$icon" "$bar" "$vol" "$( [ "$mute" -eq 1 ] && echo muted || echo normal )" "$vol"

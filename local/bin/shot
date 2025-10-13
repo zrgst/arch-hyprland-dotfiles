@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+DIR="$(xdg-user-dir PICTURES 2>/dev/null || echo "$HOME/Pictures")/Screenshots"
+mkdir -p "$DIR"
+ts="$(date +'%Y-%m-%d_%H-%M-%S')"
+file="$DIR/Screenshot-$ts.png"
+
+notify() { notify-send "Screenshot" "$1"; }
+
+case "${1:-area}" in
+area) grim -g "$(slurp)" "$file" ;;
+window) grim -g "$(hyprctl activewindow -j | jq -r '.at[0],.at[1],.size[0],.size[1]' | paste -sd',' -)" "$file" ;;
+screen) grim "$file" ;;
+mon) grim -o "${2:-$(hyprctl monitors -j | jq -r '.[0].name')}" "$file" ;;
+all) grim -t ppm - | convert - "$file" ;; # fallback if you script multi-head differently
+*)
+  echo "usage: shot [area|window|screen|mon|all] [MONITOR] [annotate]" >&2
+  exit 2
+  ;;
+esac
+
+# optional annotate
+if [[ "${2:-}" == "annotate" || "${3:-}" == "annotate" ]]; then
+  swappy -f "$file" -o "$file"
+fi
+
+# copy to clipboard by default
+wl-copy <"$file"
+
+notify "Saved to $file and copied to clipboard"
+echo "$file"

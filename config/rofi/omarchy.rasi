@@ -1,0 +1,69 @@
+* {
+  fg: #CDD6F4;                     /* bright text */
+  bg: rgba(30,30,46,0.95);         /* mocha base */
+  acc: #B4BEFE;                    /* lavender */
+  background-color: transparent;
+  border-radius: 0;
+  font: "JetBrainsMono Nerd Font 13";
+}
+
+window {
+  location: center;
+  width: 40%;
+  border: 2px;
+  border-color: @acc;
+  border-radius: 0;
+  background-color: @bg;
+}
+
+mainbox, listview, element, textbox, scrollbar {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+inputbar {
+  background-color: rgba(49,50,68,1.0); /* solid search field */
+  border: 1px;
+  border-color: @acc;
+  padding: 6px 10px;
+  border-radius: 0;
+}
+
+prompt {
+  text-color: @fg;
+  font: "JetBrainsMono Nerd Font Bold 13";
+}
+
+entry {
+  expand: true;
+  placeholder: "  Search apps…";
+  text-color: @fg;
+  background-color: transparent;
+}
+
+listview {
+  lines: 12;
+  spacing: 6px;
+}
+
+element {
+  padding: 6px 10px;
+  text-color: @fg;
+}
+
+element-text {
+    text-color: #CDD6F4;
+    font: "JetBrainsMono Nerd Font 13";
+  }
+
+element selected {
+  background-color: @acc;
+  text-color: #1E1E2E;
+  border: 1px;
+  border-color: #B4BEFE;
+  background-color: rgba(180,190,254,0.5); /* Subtile Lavender backlight */
+  padding: 5px 9px;
+}
+
+element-icon { size: 22px; }
+

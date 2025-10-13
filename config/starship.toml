@@ -1,0 +1,9 @@
+add_newline = false
+format = "$directory$character "
+
+[directory]
+style = "white"
+
+[character]
+success_symbol = "❯ "
+error_symbol = "❯ "

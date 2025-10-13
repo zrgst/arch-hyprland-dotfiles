@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+exec /usr/bin/discord \
+  --enable-features=UseOzonePlatform,WaylandWindowDecorations \
+  --ozone-platform=wayland "$0"

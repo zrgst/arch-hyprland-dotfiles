@@ -1,0 +1,11 @@
+
+@theme "~/.config/rofi/omarchy.rasi"
+
+configuration {
+	modi: "drun";
+	show-icons: true;
+	icon-theme: "Papirus";
+	font: "JetBrainsMono Nerd Font 12";
+	display-drun: "Apps:";
+	drun-display-format: "{name}";
+}
