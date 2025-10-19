@@ -1,0 +1,12 @@
+* {
+  fg: #c7d0d9;
+  bg: rgba(14,20,27,0.92);
+  acc: #14d8ff;              /* cyan */
+  warn: #ff9e00;             /* orange */
+  background-color: transparent;
+  border-radius: 8px;
+  font: "JetBrainsMono Nerd Font 13";
+}
+
+window { width: 42%; background-color: @bg; border: 2px; border-color: @acc; }
+

@@ -1,34 +1,36 @@
-/* Omarchy-ish: dark, rounded, translucent */
-@define-color bg #313244;
-@define-color fg #b4befe;
-@define-color acc #6c7086;
+/* Star Citizen palette */
+@define-color bg   #0e141b;
+@define-color fg   #c7d0d9;
+@define-color acc  #14d8ff;   /* cyan */
+@define-color warn #ff9e00;   /* orange */
+@define-color mute #6b7a88;
 
+/* base */
 * { font-family: "JetBrainsMono Nerd Font", monospace; font-size: 12px; color: @fg; }
+window#waybar { background: rgba(14,20,27,0.85); border-bottom: 2px solid @acc; }
 
-window#waybar {
-  background: transparent;
+/* container */
+#waybar > box { background: @bg; border: 0; border-radius: 0; padding: 0; }
+
+/* workspaces */
+#workspaces button { padding: 0 8px; border-radius: 6px; color: @fg; }
+#workspaces button.active { background: @acc; color: #0e141b; }
+#workspaces button.urgent { background: @warn; color: #0e141b; }
+#workspaces button:hover { background: rgba(20,216,255,0.18); }
+
+/* modules spacing */
+#clock, #tray, #battery, #pulseaudio, #network, #bluetooth, #cpu, #memory, #custom-launcher, #custom-power {
+  padding: 0 8px; border-left: 1px solid rgba(199,208,217,0.08);
 }
 
-#waybar > box {
-  background: @bg;
-  border: 0px;
-  border-radius: 0px;
-  padding: 0;
-}
+/* pulseaudio state */
+#pulseaudio.muted { color: @mute; }
 
-/* spacing */
-#workspaces button { padding: 0 8px; border-radius: 10px; }
-#workspaces button.active { background: @acc; color: #2E3440; }
-#workspaces button:hover { background: rgba(136,192,208,0.25); }
-
-
-
-#clock, #tray, #battery, #pulseaudio, #network, #bluetooth, #cpu, #memory, #custom-launcher {
-  padding: 0 8px;
-}
-
+/* custom buttons */
 #custom-launcher { font-size: 16px; margin-right: 6px; }
+#custom-power { background: @bg; border-radius: 6px; }
+#custom-power:hover { background: rgba(255,158,0,0.15); }
 
-/* Custom Power-menu */
-#custom-power { padding: 0 10px; }
-#custom-power { background: @bg; border-radius: 10px; }
+/* tooltips */
+tooltip { background: @bg; border: 1px solid @acc; color: @fg; }
+

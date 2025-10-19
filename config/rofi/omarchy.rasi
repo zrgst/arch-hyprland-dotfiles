@@ -1,7 +1,8 @@
 * {
-  fg: #CDD6F4;                     /* bright text */
-  bg: rgba(30,30,46,0.95);         /* mocha base */
-  acc: #B4BEFE;                    /* lavender */
+  fg: #C7D0D9;                     /* light neutral text */
+  bg: rgba(14,20,27,0.95);         /* deep dark background-color */
+  acc: #14D8FF;                    /* SC cyan accent */
+  higl: rgba(255,158,0,0.95);
   background-color: transparent;
   border-radius: 0;
   font: "JetBrainsMono Nerd Font 13";
@@ -22,7 +23,7 @@ mainbox, listview, element, textbox, scrollbar {
 }
 
 inputbar {
-  background-color: rgba(49,50,68,1.0); /* solid search field */
+  background-color: @bg; /* solid search field */
   border: 1px;
   border-color: @acc;
   padding: 6px 10px;
@@ -48,22 +49,23 @@ listview {
 
 element {
   padding: 6px 10px;
-  text-color: @fg;
+  text-color: @acc;
 }
 
 element-text {
-    text-color: #CDD6F4;
+    text-color: @acc;
     font: "JetBrainsMono Nerd Font 13";
   }
 
 element selected {
-  background-color: @acc;
-  text-color: #1E1E2E;
-  border: 1px;
-  border-color: #B4BEFE;
-  background-color: rgba(180,190,254,0.5); /* Subtile Lavender backlight */
-  padding: 5px 9px;
+  background-color: transparent;
+  text-color: @acc;
+  border: 2px;
+  border-color: @higl;
+  background-color: @bg; /* SC warning orange */
+  padding: 2px 4px;
 }
 
 element-icon { size: 22px; }
+
 
