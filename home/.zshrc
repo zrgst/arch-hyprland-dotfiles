@@ -2,6 +2,11 @@
 export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 
+# --- Start SSH agent automatically ---
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  eval "$(ssh-agent -s)" > /dev/null
+fi
+
 # --- history ---
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
