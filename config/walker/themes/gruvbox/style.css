@@ -1,54 +1,28 @@
-@define-color bg   #282828;
-@define-color base #3c3836;
-@define-color fg   #ebdbb2;
-@define-color sel  #504945;
-@define-color acc  #fabd2f;
+@define-color window_bg_color #000000;
+@define-color accent_bg_color #333333;
+@define-color theme_fg_color #ffffff;
 
-/* base-bakgrunn */
-window, .content, .results, .list, listview, .sidebar, box, viewport, scrolledwindow {
+* {
   all: unset;
-  background-color: @bg !important;
-  color: @fg !important;
 }
 
-/* tekst */
-label, entry, .entry, .input {
-  color: @fg !important;
-  background-color: @base !important;
-  border: 1px solid @sel !important;
+.box-wrapper {
+  background: @window_bg_color;
+  padding: 10px;
+  border: 1px solid @accent_bg_color;
 }
 
-/* rader */
-row, listview row, .list row, .results row {
-  background-color: @base !important;
-  color: @fg !important;
+.input {
+  background: @accent_bg_color;
+  color: @theme_fg_color;
+  padding: 8px;
 }
 
-row:hover:not(:selected),
-listview row:hover:not(:selected),
-.results row:hover:not(:selected) {
-  background-color: shade(@base, 1.1) !important;
+.item-box {
+  padding: 8px;
 }
 
-/* markert rad */
-row:selected,
-listview row:selected,
-.results row:selected,
-.list row:selected,
-.list .selected {
-  background-color: @sel !important;
-  color: @acc !important;
-  outline: 2px solid @acc !important;
-  outline-offset: -2px;
+child:selected .item-box {
+  background: @accent_bg_color;
 }
 
-row:selected label,
-listview row:selected label,
-.results row:selected label,
-.list row:selected label {
-  color: @acc !important;
-}
-
-/* fjern system-overlay */
-window:backdrop, .content:backdrop { background-color: @bg !important; }
-selection { background-color: @sel !important; color: @acc !important; }
