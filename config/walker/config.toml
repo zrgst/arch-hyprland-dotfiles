@@ -1,0 +1,7 @@
+#/home/zrgst/.config/walker/config.toml
+theme = "default"
+placeholders.default.input = "Launch..."
+providers.prefixes = [
+  { provider = "websearch", prefix = "+" },
+  { provider = "providerlist", prefix = ";"},
+]
