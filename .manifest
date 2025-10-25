@@ -21,3 +21,4 @@ usr/local/bin/epoch.sh
 usr/local/bin/sun
 usr/local/bin/turtlewow.sh
 config/lazygit/config.yml
+config/walker/config.toml
