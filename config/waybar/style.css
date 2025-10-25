@@ -1,9 +1,9 @@
 /* Star Citizen palette */
-@define-color bg   #0e141b;
-@define-color fg   #c7d0d9;
-@define-color acc  #14d8ff;   /* cyan */
-@define-color warn #ff9e00;   /* orange */
-@define-color mute #6b7a88;
+@define-color bg   #32302f;
+@define-color fg   #ebdbb2;
+@define-color acc  #8ec07c;   /* aqua */
+@define-color warn #d65d0e;   /* orange */
+@define-color mute #928374;
 
 /* base */
 * { font-family: "JetBrainsMono Nerd Font", monospace; font-size: 12px; color: @fg; }
