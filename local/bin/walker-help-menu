@@ -3,13 +3,13 @@
 choice=$(printf "Keybinds\nConfigs\nGitHub Repo" | walker --dmenu)
 
 case "$choice" in
-  "")
-    /home/zrgst/.local/bin/walker-help-keybinds
-    ;;
-  "")
-    nvim /home/zrgst/dotfiles
-    ;;
-  "")
-    xdg-open "https://github.com/zrgst/arch-hyprland-dotfiles"
-    ;;
+"")
+  /home/zrgst/.local/bin/walker-help-keybinds
+  ;;
+"")
+  nvim /home/zrgst/dotfiles
+  ;;
+"")
+  /home/zrgst/.local/bin/webapp-github-zrgst
+  ;;
 esac
