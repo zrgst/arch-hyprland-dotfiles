@@ -5,12 +5,11 @@ gui:
   scrollHeight: 2
 git:
   autoFetch: true
-  paging:
-    colorArg: always
-    pager: "delta --dark --paging=never"
+  pagers:
+    - colorArg: always
+      pager: "delta --dark --paging=never"
   merge:
     autoCommit: false
 keybinding:
   universal:
     return: <esc>
-

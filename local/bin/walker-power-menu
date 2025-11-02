@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+options="⏻  Power off\n  Reboot\n  Log out\n  Suspend"
+
+choice=$(echo -e "$options" | walker --dmenu "Power:")
+
+case "$choice" in
+"⏻  Power off") systemctl poweroff ;;
+"  Reboot") systemctl reboot ;;
+"  Log out") hyprctl dispatch exit ;;
+"  Suspend") systemctl suspend ;;
+esac

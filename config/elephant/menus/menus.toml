@@ -1,0 +1,65 @@
+# ~/.config/elephant/menus.toml
+# Spill-launcher:
+[[menus]]
+name = "games"
+
+[[menus.items]]
+label = "󱡂 Ascension WoW"
+activate = "runner;/usr/local/bin/ascension.sh;exec;;"
+
+[[menus.items]]
+label = "󰓥 Project Epoch"
+activate = "runner;/usr/local/bin/epoch.sh;exec;;"
+
+[[menus.items]]
+label = "󰳗 Turtle WoW"
+activate = "runner;/usr/local/bin/turtlewow.sh;exec;;"
+
+[[menus.items]]
+label = "󰍳 Prism Launcher"
+activate= "runner;/bin/prismlauncher;exec;;"
+
+[[menus.items]]
+label = " Steam"
+activate= "runner;steam;exec;;steam"
+
+# Mine egne scripts i en handy liten meny.
+[[menus]]
+name = "scripts"
+
+[[menus.items]]
+label = "Home Scan"
+activate = "runner;/usr/local/bin/home-scan.sh;exec;;"
+
+[[menus.items]]
+label = "Sun - Weather App"
+activate = "runner;/usr/local/bin/sun;exec;;"
+
+[[menus.items]]
+label = "Stoic-quote"
+activate = "runner;/usr/local/bin/stoicq;exec;;"
+
+[[menus.items]]
+label = " Chat GPT Webapp"
+activate = "runner;/home/zrgst/.local/bin/webapp-chatgpt;exec;;"
+
+# Power meny
+[[menus]]
+name = "power"
+
+[[menus.items]]
+label = "⏻  Power off"
+activate = "runner;systemctl poweroff;exec;;"
+
+[[menus.items]]
+label = "  Reboot"
+activate = "runner;systemctl reboot;exec;;"
+
+[[menus.items]]
+label = "  Log out"
+activate = "runner;hyprctl dispatch exit;exec;;"
+
+[[menus.items]]
+label = "  Suspend"
+activate = "runner;systemctl suspend;exec;;"
+

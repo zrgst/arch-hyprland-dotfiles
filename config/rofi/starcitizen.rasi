@@ -8,5 +8,5 @@
   font: "JetBrainsMono Nerd Font 13";
 }
 
-window { width: 42%; background-color: @bg; border: 2px; border-color: @acc; }
+window { width: 25%; background-color: @bg; border: 2px; border-color: @acc; }
 
