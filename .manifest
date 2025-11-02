@@ -22,8 +22,12 @@ usr/local/bin/sun
 usr/local/bin/turtlewow.sh
 config/lazygit/config.yml
 config/walker/config.toml
+local/bin/walker-zrgst-menu
 local/bin/walker-power-menu
 local/bin/walker-game-menu
 local/bin/walker-help-menu
 local/bin/walker-help-keybinds
+local/bin/webapp-hyprland-zrgst
+local/bin/webapp-arch-zrgst
+local/bin/webapp-github-zrgst
 
