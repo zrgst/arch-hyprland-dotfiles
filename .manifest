@@ -24,3 +24,6 @@ config/lazygit/config.yml
 config/walker/config.toml
 local/bin/walker-power-menu
 local/bin/walker-game-menu
+local/bin/walker-help-menu
+local/bin/walker-help-keybinds
+

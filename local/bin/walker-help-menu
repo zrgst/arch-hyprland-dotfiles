@@ -1,0 +1,15 @@
+#!/bin/sh
+
+choice=$(printf "Keybinds\nConfigs\nGitHub Repo" | walker --dmenu)
+
+case "$choice" in
+  "")
+    /home/zrgst/.local/bin/walker-help-keybinds
+    ;;
+  "")
+    nvim /home/zrgst/dotfiles
+    ;;
+  "")
+    xdg-open "https://github.com/zrgst/arch-hyprland-dotfiles"
+    ;;
+esac

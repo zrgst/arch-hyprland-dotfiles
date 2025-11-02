@@ -1,0 +1,6 @@
+#!/bin/sh
+HYPRCONF="${HYPRCONF:-$HOME/.config/hypr/hyprland.conf}"
+
+grep -E 'bind =|bind =' "$HYPRCONF" \
+  | sed 's/^ *bind = //; s/, exec, / → /' \
+  | walker --dmenu
