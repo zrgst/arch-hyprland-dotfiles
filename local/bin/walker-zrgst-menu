@@ -3,10 +3,13 @@ options="󰍳 Game Launcher\n⏻ Power Menu\n󰮥 Help"
 choice=$(echo -e "$options" | walker --dmenu "Zrgst Menu...")
 
 case "$choice" in
-  "󰍳 Game Launcher")
-    ~/-local/bin/walker-game-menu ;;
-  "⏻ Power Menu")
-    ~/.local/bin/walker-power-menu ;;
-  "󰮥 Help")
-    ~/.local/bin/walker-help-menu ;;
+"󰍳 Game Launcher")
+  ~/.local/bin/walker-game-menu
+  ;;
+"⏻ Power Menu")
+  ~/.local/bin/walker-power-menu
+  ;;
+"󰮥 Help")
+  ~/.local/bin/walker-help-menu
+  ;;
 esac
