@@ -23,3 +23,4 @@ usr/local/bin/turtlewow.sh
 config/lazygit/config.yml
 config/walker/config.toml
 local/bin/walker-power-menu
+local/bin/walker-game-menu
