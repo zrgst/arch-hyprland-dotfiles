@@ -1,15 +1,21 @@
 #!/bin/sh
 
-choice=$(printf "Keybinds\nConfigs\nGitHub Repo" | walker --dmenu)
+choice=$(printf "󰌌 Keybinds\n Configs\n Dotfiles on GitHub\n Hyprland Docs\n󰣇 Arch Linux Docs" | walker --dmenu)
 
 case "$choice" in
-"")
+"󰌌 Keybinds")
   /home/zrgst/.local/bin/walker-help-keybinds
   ;;
-"")
+" Configs")
   nvim /home/zrgst/dotfiles
   ;;
-"")
+" Dotfiles on GitHub")
   /home/zrgst/.local/bin/webapp-github-zrgst
+  ;;
+" Hyprland Docs")
+  /home/zrgst/.local/bin/webapp-hyprland-zrgst
+  ;;
+"󰣇 Arch Linux Docs")
+  /home/zrgst/.local/bin/webapp-arch-zrgst
   ;;
 esac
