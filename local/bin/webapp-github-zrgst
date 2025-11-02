@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+chromium \
+  --app=https://chatgpt.com \
+  --class=WebApp-ChatGPT \
+  --user-data-dir="$HOME/.local/share/webapps/chatgpt" \
+  --new-window \
+  --enable-features=UseOzonePlatform,WaylandWindowDecorations,WebRTCPipeWireCapturer \
+  --ozone-platform-hint=wayland
