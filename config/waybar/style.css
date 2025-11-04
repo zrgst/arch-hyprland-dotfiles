@@ -1,36 +1,196 @@
-/* Star Citizen palette */
-@define-color bg   #32302f;
-@define-color fg   #ebdbb2;
-@define-color acc  #8ec07c;   /* aqua */
-@define-color warn #d65d0e;   /* orange */
-@define-color mute #928374;
+@define-color orange #E78A4E;
+@define-color purple #D3869B;
+@define-color blue #7DAEA3;
+@define-color yellow #D8A657;
+@define-color green #A9B665;
+@define-color darkgray #32302F;
+@define-color beige #D4BE98;
 
-/* base */
-* { font-family: "JetBrainsMono Nerd Font", monospace; font-size: 12px; color: @fg; }
-window#waybar { background: rgba(14,20,27,0.85); border-bottom: 2px solid @acc; }
-
-/* container */
-#waybar > box { background: @bg; border: 0; border-radius: 0; padding: 0; }
-
-/* workspaces */
-#workspaces button { padding: 0 8px; border-radius: 6px; color: @fg; }
-#workspaces button.active { background: @acc; color: #0e141b; }
-#workspaces button.urgent { background: @warn; color: #0e141b; }
-#workspaces button:hover { background: rgba(20,216,255,0.18); }
-
-/* modules spacing */
-#clock, #tray, #battery, #pulseaudio, #network, #bluetooth, #cpu, #memory, #custom-launcher, #custom-power {
-  padding: 0 8px; border-left: 1px solid rgba(199,208,217,0.08);
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font", monospace;
+	font-size: 16px;
+	min-height: 12px;
 }
 
-/* pulseaudio state */
-#pulseaudio.muted { color: @mute; }
+window#waybar {
+	background: transparent;
+}
 
-/* custom buttons */
-#custom-launcher { font-size: 16px; margin-right: 6px; }
-#custom-power { background: @bg; border-radius: 6px; }
-#custom-power:hover { background: rgba(255,158,0,0.15); }
+window#waybar.hidden {
+	opacity: 0.2;
+}
 
-/* tooltips */
-tooltip { background: @bg; border: 1px solid @acc; color: @fg; }
+#window {
+    margin-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+	border-radius: 26px;
+	transition: none;
+	/*
+    color: #f8f8f2;
+	background: #282a36;
+    */
+    color: transparent;
+	background: transparent;
+}
 
+window#waybar.termite #window,
+window#waybar.Firefox #window,
+window#waybar.Navigator #window,
+window#waybar.PCSX2 #window {
+    color: #4d4d4d;
+	background: #e6e6e6;
+}
+
+#workspaces {
+	margin-top: 8px;
+	margin-left: 12px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	background: @beige;
+	transition: none;
+}
+
+#mpd {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	background: #282a36;
+	transition: none;
+	color: #4d4d4d;
+	background: #5af78e;
+}
+
+#mpd.disconnected,
+#mpd.stopped {
+	color: #f8f8f2;
+	background: #282a36;
+}
+
+#network {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @purple;
+}
+
+#pulseaudio {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @blue;
+}
+
+#temperature {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: #4d4d4d;
+	background: #5af78e;
+}
+
+#cpu {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @yellow;
+}
+
+#memory {
+	margin-top: 8px;
+	margin-left: 8px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @orange;
+}
+
+#clock {
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 12px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @beige;
+	background: @darkgray;
+}
+
+#custom-launcher {
+	margin-top: 8px;
+	margin-left: 8px;
+	margin-right: 12px;
+	padding-left: 16px;
+	padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @orange;
+}
+#workspaces button {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 12px;
+	margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+	margin-bottom: 4px;
+	border-radius: 26px;
+	transition: none;
+	color: @yellow;
+	background: @darkgray;
+}
+#workspaces button.active {
+	margin-top: 0;
+	margin-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+	margin-bottom: 0;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @yellow;
+}
+#workspaces button:hover {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	margin-left: 12px;
+	margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+	margin-bottom: 4px;
+	border-radius: 26px;
+	transition: none;
+	color: @darkgray;
+	background: @orange;
+}
