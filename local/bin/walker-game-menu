@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 options=" Discord  \n󰞇 Ascension WoW\n󰓥 Project Epoch\n󰳗 Turtle-WoW\n󰍳 Minecraft\n󰓓 Steam"
 choice=$(echo -e "$options" | walker --dmenu "Select your game:")
+status=$?
+[ status -ne 0 ] && $HOME/.local/bin/walker-zrgst-menu
 
 case "$choice" in
 " Discord  ")

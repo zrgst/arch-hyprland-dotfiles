@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 choice="$(printf "Discord Wayland\nAscension WoW\nProject Epoch\nTurtle-WoW\nMinecraft\nSteam" | rofi -dmenu -i -p 'Games')"
 
+# ESC to go back to main menu
+[ $status -ne 0 ] && $HOME/.local/bin/walker-zrgst-menu
+
 case "$choice" in
 "Discord Wayland")
   setsid -f /usr/local/bin/discord-wayland >/dev/null 2>&1
@@ -20,5 +23,5 @@ case "$choice" in
 "Steam")
   setsid -f /usr/bin/steam >/tmp/steam.log 2>&1
   ;;
-*) exit 0 ;;
+*) ;; # exit 0 ;;
 esac
