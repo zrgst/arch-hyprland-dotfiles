@@ -1,6 +1,12 @@
 #!/bin/sh
 HYPRCONF="${HYPRCONF:-$HOME/.config/hypr/hyprland.conf}"
+rc=$?
 
-grep -E 'bind =|bind =' "$HYPRCONF" \
-  | sed 's/^ *bind = //; s/, exec, / → /' \
-  | walker --dmenu
+grep -E 'bind =|bind =' "$HYPRCONF" |
+  sed 's/^ *bind = //; s/, exec, / → /' |
+  walker --dmenu
+
+if [ $rc -ne 0 ] || [ -z "${choice:-}" ]; then
+  "$HOME/.local/bin/walker-zrgst-menu"
+  exit 0
+fi

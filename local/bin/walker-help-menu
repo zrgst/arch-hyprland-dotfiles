@@ -1,6 +1,12 @@
 #!/bin/sh
 
 choice=$(printf "󰌌 Keybinds\n Configs\n Dotfiles on GitHub\n Hyprland Docs\n󰣇 Arch Linux Docs" | walker --dmenu)
+rc=$?
+
+if [ $rc -ne 0 ] || [ -z "${choice:-}" ]; then
+  "$HOME/.local/bin/walker-zrgst-menu"
+  exit 0
+fi
 
 case "$choice" in
 "󰌌 Keybinds")
