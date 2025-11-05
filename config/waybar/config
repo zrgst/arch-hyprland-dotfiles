@@ -1,18 +1,19 @@
 {
 	"layer": "top",
-	"modules-left": ["hyprland/workspaces", "mpd", "sway/mode"],
+	"modules-left": ["hyprland/workspaces", "mpris", "sway/mode"],
 	"modules-center": ["custom/launcher"],
 	"modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "clock"],
-	"mpd": {
-		"tooltip": false,
-		"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
-		"format-disconnected": "ﳌ",
-		"format-stopped": "",
-        "state-icons": {
-            "playing": "",
-            "paused": ""
-        }
-	},
+	
+  "mpris": {
+      "player": "playerctld",  // velg automatisk aktiv spiller
+      "format": "{title} — {artist}",
+      "format-stopped": "󰝚",
+      "max-length": 50,
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl next",
+      "on-scroll-down": "playerctl previous"
+  },
+
   "custom/launcher": {
       "format": "  ",
       "tooltip": false,

@@ -53,23 +53,23 @@ window#waybar.PCSX2 #window {
 	transition: none;
 }
 
-#mpd {
+#mpris {
 	margin-top: 8px;
 	margin-left: 8px;
-	padding-left: 16px;
+	padding-left: 32px;
 	padding-right: 16px;
 	margin-bottom: 0;
 	border-radius: 26px;
-	background: #282a36;
+	background: transparent;
 	transition: none;
-	color: #4d4d4d;
-	background: #5af78e;
+	color: @orange;
+	background: @darkgray;
 }
 
 #mpd.disconnected,
 #mpd.stopped {
-	color: #f8f8f2;
-	background: #282a36;
+	color: @darkgray;
+	background: @purple;
 }
 
 #network {
